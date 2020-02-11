@@ -22,5 +22,5 @@ function find_missing_number(nums) {
     return n;
   }
   
-  //NOTE: the largest one will end up in the place of the missing number
+  //NOTE: the largest one will end up in the place of the missing numberx
   console.log(find_missing_number([4, 0, 3, 1]));
