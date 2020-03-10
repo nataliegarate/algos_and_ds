@@ -55,3 +55,16 @@ console.log("b(a)r", removeMinParenthesis("b(a)r)"));
 console.log("none", removeMinParenthesis(")("));
 console.log("none", removeMinParenthesis("(a(b(b(n((((ghjhvbj"));
 console.log("(())", removeMinParenthesis(")(())("));
+
+/* My first struggle was remembering how to validate parenthesis; I got stuck on this for a while.
+Then I remembered that I could use a stack and it slowly started coming back
+
+Next, I struggled for a while thinking how to implement removing the least amount of strings
+
+I came to think I would need to record 'bad indexes' then i could push everything in the string except the bad indexes
+
+I struggled on this for a while, having trouble thinking 'where would i store these indexes'
+
+Then I realized I could store them when I add to the stack, and reference the stored index on the stack
+when I wanted to remove something that shouldn't eb in the 'bad' array (becasue we found a pair)
+*/
