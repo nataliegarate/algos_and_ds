@@ -1,17 +1,8 @@
-/*
-
-                           
-0                [1]                   []
-1          [12]        [1]        [2]       []
-2      [123] [12]   [13] [1]   [23] [2]   [3] []
-
-*/
-
 function subsets(arr) {
   let res = [];
   function generateSubsets(nums, temp, index) {
     if (index === nums.length) {
-      res.push(temp.slice()); // must make copy or else will be passing in reference which is a NO
+      res.push(temp.slice());
       return;
     }
     temp.push(nums[index]);
@@ -29,7 +20,25 @@ Input Size: N = 3;
 Nodes Visited: 2^3 nodes
 Time Complexity: 0 (2^N) 
 
-Space Complexity: height.... 3
-*/
+Space Complexity: height.... 3 on stack
+and at most 3 in temp array.....
+  
+
+
+0                1
+
+1       12                 2
+
+2   123     13          23     3
+
+3 when things get added
+
+note: photo does not reflect popping
+
+
+  0    1
+  1  12  2
+  2 things get pushed at this level
+  */
 
 console.log(subsets([1, 2, 3]));

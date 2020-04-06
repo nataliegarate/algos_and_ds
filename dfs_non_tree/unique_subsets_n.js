@@ -1,4 +1,4 @@
-function unique_subsets(nums, n) {
+function n_subsets(nums, n) {
   let results = [];
   let temp = [];
 
@@ -16,4 +16,4 @@ function unique_subsets(nums, n) {
   return results;
 }
 let numys = [1, 2, 3];
-console.log(unique_subsets(numys, 2));
+console.log(n_subsets(numys, 2));
