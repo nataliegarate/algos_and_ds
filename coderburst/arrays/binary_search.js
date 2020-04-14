@@ -20,3 +20,22 @@ let binarySearch = function (a, key) {
   }
   return -1;
 };
+
+// Recursion
+// let binarySearch = function (a, key, low = 0, high = a.length - 1) {
+//     if (!(low + 1 < high)) {
+//         if (a[low] === key) {
+//             return low;
+//         }
+//         if (a[high] === key) {
+//             return high;
+//         }
+//         return -1;
+//     }
+//     let mid = Math.floor((low + high) / 2);
+//     if (key < a[mid]) {
+//         return binarySearch(a, key, low, mid);
+//     } else {
+//         return binarySearch(a, key, mid, high);
+//     }
+// };
