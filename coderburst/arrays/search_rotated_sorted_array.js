@@ -3,26 +3,56 @@
 
 //6
 //[5,6,7,1,2,3,4]
+//iterative space constant, time logn
+// let binarySearchRotated = function (arr, key) {
+//   let start = 0;
+//   let end = arr.length - 1;
+//   while (start + 1 < end) {
+//     let mid = Math.floor((start + end) / 2);
+//     if (arr[mid] === key) {
+//       return mid;
+//     }
+//     if (arr[start] < arr[mid]) {
+//       if (key >= arr[start] && key < arr[mid]) {
+//         end = mid;
+//       } else {
+//         start = mid;
+//       }
+//     } else if (arr[mid] < arr[end]) {
+//       if (key > arr[mid] && key <= arr[end]) {
+//         start = mid;
+//       } else {
+//         end = mid;
+//       }
+//     }
+//   }
+//   if (arr[start] === key) {
+//     return start;
+//   }
+//   if (arr[end] === key) {
+//     return end;
+//   }
+//   return -1;
+// };
 
-let binarySearchRotated = function (arr, key) {
-  let start = 0;
-  let end = arr.length - 1;
-  while (start + 1 < end) {
+//recursive space/time logn
+let binarySearchRotated = function (arr, key, start = 0, end = arr.length - 1) {
+  if (start + 1 < end) {
     let mid = Math.floor((start + end) / 2);
     if (arr[mid] === key) {
       return mid;
     }
     if (arr[start] < arr[mid]) {
       if (key >= arr[start] && key < arr[mid]) {
-        end = mid;
+        binarySearchRotated(arr, key, start, mid);
       } else {
-        start = mid;
+        binarySearchRotated(arr, key, mid, end);
       }
     } else if (arr[mid] < arr[end]) {
       if (key > arr[mid] && key <= arr[end]) {
-        start = mid;
+        binarySearchRotated(arr, key, mid, end);
       } else {
-        end = mid;
+        binarySearchRotated(arr, key, start, mid);
       }
     }
   }
