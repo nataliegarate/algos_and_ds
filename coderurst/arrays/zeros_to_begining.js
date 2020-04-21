@@ -1,5 +1,4 @@
 let moveZerosToLeft = function (A) {
-  console.log(A);
   let numOfZeros = 0;
   for (let i = A.length - 1; i >= 0; i--) {
     if (A[i] === 0) {
