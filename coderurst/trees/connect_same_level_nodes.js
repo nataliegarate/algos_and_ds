@@ -27,10 +27,11 @@ let populateSiblingPointers = function (root) {
   let curLevel = queue[0].level;
   let lastOne;
   let cur = null;
+  let i = 0;
 
-  while (queue.length > 0) {
+  while (i < queue.length) {
     lastOne = cur;
-    cur = queue.shift();
+    cur = queue[i];
     if (curLevel === cur.level && lastOne) {
       lastOne.node.next = cur.node;
     }
@@ -43,8 +44,34 @@ let populateSiblingPointers = function (root) {
     if (cur.node.right) {
       queue.push({ node: cur.node.right, level: cur.level + 1 });
     }
+    i++;
   }
   return root;
 };
 
 console.log(populateSiblingPointers(node3));
+
+// let populateSiblingPointers = function (root) {
+//     let queue = [{ node: root, level: 0 }];
+//     let curLevel = queue[0].level;
+//     let lastOne;
+//     let cur = null;
+
+//     while (queue.length > 0) {
+//         lastOne = cur;
+//         cur = queue.shift();
+//         if (curLevel === cur.level && lastOne) {
+//             lastOne.node.next = cur.node;
+//         }
+//         if (curLevel !== cur.level) {
+//             curLevel = cur.level;
+//         }
+//         if (cur.node.left) {
+//             queue.push({ node: cur.node.left, level: cur.level + 1 });
+//         }
+//         if (cur.node.right) {
+//             queue.push({ node: cur.node.right, level: cur.level + 1 });
+//         }
+//     }
+//     return root;
+// };
