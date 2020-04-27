@@ -20,15 +20,13 @@ node2.left = node1;
 let inorderIterative = function (curr) {
   var result = "";
   let stack = [];
-
   while (stack.length !== 0 || curr) {
-    if (curr) {
+    while (curr) {
       stack.push(curr);
       curr = curr.left;
-      continue;
     }
-
     result += stack[stack.length - 1].data + "";
+
     curr = stack[stack.length - 1].right;
     stack.pop();
   }
