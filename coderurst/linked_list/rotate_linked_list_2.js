@@ -24,9 +24,10 @@ let rotateList = function (head, n) {
   if (n > length || n < -length) {
     n = getUseableN(n, length);
   }
-  if (n < -length) {
+  if (n < 0) {
     n = n * -1;
   }
+  console.log(n);
   let newLast = getNthLastNode(head, n + 1);
   let newHead = newLast.next;
   let oldLast = getOldLast(newLast);
@@ -39,7 +40,6 @@ let rotateList = function (head, n) {
 };
 
 function getUseableN(n, length) {
-  console.log(n % length);
   newN = n % length;
   return newN;
 }
@@ -76,4 +76,4 @@ function getOldLast(node) {
   return cur;
 }
 
-console.log(rotateList(node1, 0));
+console.log(rotateList(node1, -22));
