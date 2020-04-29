@@ -2,6 +2,7 @@
 
 let removeWhiteSpaces = function (s) {
   let numOfSpaces = 0;
+  //is this O(n) or O(1) space
   let arr = s.split("");
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] == " ") {
@@ -18,3 +19,9 @@ let removeWhiteSpaces = function (s) {
 };
 
 console.log(removeWhiteSpaces("n a t a l"));
+
+let str = "natalie";
+
+[str[0], (str[1] = str[1]), str[0]];
+
+console.log(str);
