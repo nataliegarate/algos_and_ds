@@ -29,24 +29,40 @@ node4.left = node35;
 */
 
 let populateSiblingPointers = function (root) {
-  let queue = [root];
-  let prev = null;
-  while (queue.length) {
-    let cur = queue.shift();
-
-    if (prev) {
-      prev.next = cur;
-    }
-
-    prev = cur;
+  let last = null;
+  let cur = root;
+  while (cur) {
     if (cur.left) {
-      queue.push(cur.left);
+      cur.next = cur.left;
+      last = cur.left;
     }
     if (cur.right) {
-      queue.push(cur.right);
+      last.next = cur.right;
+      last = cur.right;
     }
+    cur = cur.next;
+    last = null;
   }
   return root;
 };
+
+// let populateSiblingPointers = function (root) {
+//   let queue = [root];
+//   let prev = null;
+//   while (queue.length) {
+//     let cur = queue.shift();
+//     if (prev) {
+//       prev.next = cur;
+//     }
+//     prev = cur;
+//     if (cur.left) {
+//       queue.push(cur.left);
+//     }
+//     if (cur.right) {
+//       queue.push(cur.right);
+//     }
+//   }
+//   return root;
+// };
 
 console.log(populateSiblingPointers(node3));
