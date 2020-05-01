@@ -40,15 +40,8 @@ function subTreeSums(node) {
   if (!rightVal) {
     node.right = null;
   }
-  if (leftVal) {
-    sum += leftVal;
-  }
-  if (rightVal) {
-    sum += rightVal;
-  }
-  if (sum === 0) {
-    return null;
-  }
+  sum += leftVal;
+  sum += rightVal;
   return sum;
 }
 
