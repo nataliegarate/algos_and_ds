@@ -31,7 +31,6 @@ let serialize = function (node, stream) {
 };
 
 let stream = serialize(node3, []);
-console.log("I AM STREAM", stream);
 let deserialize = function (stream) {
   let idx = 0;
   let head = new BinaryTreeNode(stream[0]);
@@ -41,11 +40,8 @@ let deserialize = function (stream) {
       return null;
     }
     idx++;
-    console.log(" i am index", idx, "i am parent", parent.data);
     let newNodeLeft = new BinaryTreeNode(stream[idx]);
     parent.left = helper(newNodeLeft);
-    console.log(" i am index", idx, "i am parent", parent.data);
-
     let newNodeRight = new BinaryTreeNode(stream[idx]);
     parent.right = helper(newNodeRight);
     return parent;
