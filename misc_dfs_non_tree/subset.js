@@ -6,6 +6,7 @@ function subsets(arr) {
       return;
     }
     temp.push(nums[index]);
+
     generateSubsets(nums, temp, index + 1);
     temp.pop();
     generateSubsets(nums, temp, index + 1);
@@ -33,7 +34,15 @@ and at most 3 in temp array.....
 
 3 when things get added
 
+
+0                1
+
+1       12                 2
+
+2   123     13          23     3
+
 note: photo does not reflect popping
+3 when things get added
 
 
   0    1
