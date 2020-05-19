@@ -1,3 +1,6 @@
+// time complexity: (0)n * m, length of each tree
+// space complexity: 0(n), height of the tallest tree
+
 var isSubtree = function (s, t) {
   if (s === null) {
     return false;
